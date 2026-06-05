@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dijkstra en el mapa del Perú</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Ruta más corta en el mapa del Perú - Algoritmo de Dijkstra</h1>
+    <p>
+      Selecciona dos departamentos y calcula la ruta más corta usando distancias geográficas entre nodos adyacentes.
+    </p>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Controles</h2>
+
+      <label for="origen">Departamento de origen</label>
+      <select id="origen"></select>
+
+      <label for="destino">Departamento de destino</label>
+      <select id="destino"></select>
+
+      <button id="btnCalcular">Calcular ruta con Dijkstra</button>
+      <button id="btnUbicacion">Usar mi geolocalización</button>
+      <button id="btnLimpiar">Limpiar ruta</button>
+
+      <div class="resultado">
+        <h3>Resultado</h3>
+        <p id="resumen">Aún no se calculó ninguna ruta.</p>
+        <ol id="listaRuta"></ol>
+      </div>
+
+      <div class="nota">
+        <strong>Nota:</strong> El mapa utiliza Google Maps API para mostrar visualmente los departamentos del Perú y la ruta más corta.
+      </div>
+    </section>
+
+    <section class="map-wrapper">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <footer>
+    Proyecto visual con Google Maps API, geolocalización, fórmula de Haversine y algoritmo de Dijkstra.
+  </footer>
+
+  <script src="app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcAjwdfiu7mGLpylcGGs6BTi5OufsbAX8&callback=initMap"></script>
+</body>
+</html>
